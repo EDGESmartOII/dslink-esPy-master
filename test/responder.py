@@ -99,7 +99,7 @@ class EDGEsmartDSLink(dslink.DSLink):
         if stat == False:
             task.LoopingCall(self.datasim).stop()
 
-    def datasim(self, toggle):
+    def datasim(self):
         int = random.randint(0,255)
         self.requester.invoke("/data/publish", dslink.Permission.WRITE, params={
             "Path": "/data/test",
@@ -151,4 +151,4 @@ class EDGEsmartDSLink(dslink.DSLink):
 
 
 if __name__ == "__main__":
-    EDGEsmartDSLink(dslink.Configuration("zzzEDGEsmart", responder=True, requester=True))
+    EDGEsmartDSLink(dslink.Configuration("zzzEDGEsmart", responder=True))

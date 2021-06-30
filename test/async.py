@@ -49,6 +49,7 @@ class EDGEsmartDSLink(dslink.DSLink):
 
 def main():
     loop = asyncio.get_event
+
 if __name__ == "__main__":
     main()
     EDGEsmartDSLink(dslink.Configuration("zzzEDGEsmart", responder=True, requester=True))
